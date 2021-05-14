@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dicoding Submission</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets//css/style.css" />
+    <link rel="stylesheet" href="assets//css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">bookshelf apps</h1>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="content">
+      <div class="container">
+        <div class="card">
+          <h1>New Book Input</h1>
+          <div class="form">
+            <label for="judul">Judul</label>
+            <input type="text" name="judul" id="judul" placeholder="Judul" />
+            <label for="penulis">Penulis</label>
+            <input type="text" name="penulis" id="penulis" placeholder="Nama Penulis" />
+            <label for="dibaca">Selesai dibaca</label>
+            <input type="checkbox" name="dibaca" id="dibaca" />
+            <label for="tahun"></label>
+            <input type="date" name="tahun" id="tahun" />
+          </div>
+          <div class="button">
+            <a href="#" class="btn">+</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search">
+      <div class="container">
+        <label for="search"></label>
+        <input type="text" name="search" placeholder="Cari buku .." />
+        <button>search</button>
+      </div>
+    </div>
+
+    <!-- belum dibaca -->
+    <div class="rak-buku">
+      <div class="container">
+        <h2>List buku belum dibaca</h2>
+      </div>
+    </div>
+    <div class="list-buku">
+      <div class="container">
+           <table  class="belum-dibaca">
+               <tr>
+                   <th>Judul</th>
+                   <th>Penulis</th>
+                   <th>Tanggal</th>
+                   <th>Action</th>
+               </tr>
+              
+               
+           </table>
+      </div>
+    </div>
+    <div class="rak-buku">
+      <div class="container">
+        <h2>List buku sudah dibaca</h2>
+      </div>
+    </div>
+    <div class="list-buku">
+      <div class="container">
+           <table class="sudah-dibaca">
+               <tr>
+                   <th>Judul</th>
+                   <th>Penulis</th>
+                   <th>Tanggal</th>
+                   <th>Action</th>
+               </tr>
+              
+               
+           </table>
+      </div>
+    </div>
+
+    
+    <!-- Javascript -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

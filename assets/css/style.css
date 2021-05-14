@@ -1,0 +1,230 @@
+/* Navbar */
+
+.navbar {
+  display: flex;
+  height: 8vh;
+  justify-content: center;
+  background-color: rgba(50, 51, 50, 0.89);
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  color: rgb(230, 229, 238);
+  font-weight: 400;
+}
+
+/* Form */
+.content {
+  display: flex;
+  justify-content: center;
+}
+.content h1 {
+  font-size: 1.3em;
+}
+.card {
+  align-items: center;
+  margin: 1rem 0px;
+  display: flex;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgb(88, 88, 88);
+}
+
+.card h1 {
+  color: rgb(98, 248, 156);
+}
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form label {
+  font-size: 1.2em;
+  color: rgb(223, 223, 231);
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.form input {
+  box-sizing: border-box;
+  height: 4vh;
+  padding: 10px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: 1px solid rgb(185, 185, 185);
+  margin-bottom: 1rem;
+}
+
+.form input[type='date'] {
+  color: rgb(0, 0, 0);
+  background-color: rgb(64, 247, 125);
+  width: 60%;
+  color: black;
+  border: 1px solid transparent;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.form input[type='checkbox'] {
+  margin-bottom: 0px;
+  margin-top: -1.8rem;
+  margin-left: 9.4rem;
+}
+.button {
+  width: 90%;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(5, 204, 104);
+  width: 16%;
+  height: 5vh;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  margin-left: auto;
+  font-weight: bolder;
+}
+.btn:hover {
+  background-color: rgb(10, 216, 103);
+  cursor: pointer;
+}
+
+/* Search */
+.search {
+  display: flex;
+  justify-content: center;
+}
+.search input {
+  width: 90%;
+  height: 4vh;
+  border-radius: 5px;
+  border: 1px solid rgb(5, 204, 104);
+  padding-left: 1rem;
+}
+.search button {
+  width: 20%;
+  height: 36.5px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: rgb(5, 204, 104);
+  margin-left: -3rem;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+/* List buku belum dibaca */
+.rak-buku{
+  display: flex;
+  justify-content: center;
+}
+.rak-buku .container{
+  background-color: rgba(50, 51, 50, 0.89);
+  margin-top: 1rem;
+  justify-content: flex-start;
+  border: 1px solid white;
+  border-radius: 5px;
+  height: 5vh;
+}
+.rak-buku .container h2 {
+  text-transform: capitalize;
+  font-size: 1.2em;
+  margin-left: 1rem;
+  color: white;
+  font-weight: 400;
+}
+
+.list-buku {
+  display: flex;
+  justify-content: center;
+}
+.list-buku .container {
+  justify-content: flex-start;
+  width: 80%;
+}
+
+
+
+.list-buku .container table {
+  width: 100%;
+  margin-top: 1rem;
+  
+}
+.list-buku .container table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: left;
+}
+
+.list-buku .container table td {
+  font-size: 0.8em;
+}
+
+.btn-hapus{
+  font-size: 0.8em;
+  background-color: rgb(117, 85, 204);
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  padding: 4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1080px) {
+  .card {
+    width: 50%;
+  }
+  .form input[type='checkbox'] {
+    margin-bottom: 0px;
+    margin-top: -2.1rem;
+    margin-left: 9.5rem;
+  }
+  .form input[type='date'] {
+    width: 25%;
+  }
+  .btn {
+    width: 8%;
+  }
+  .search input {
+    width: 43%;
+    height: 3vh;
+  }
+  .search button {
+    width: 8%;
+  }
+  .rak-buku .container {
+    width: 40%;
+  }
+  .list-buku .container {
+    width: 40%;
+  }
+  .list-buku .container table td {
+    font-size: 1em;
+  }
+}
