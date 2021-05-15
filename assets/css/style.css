@@ -183,7 +183,19 @@ td {
 
 .btn-hapus{
   font-size: 0.8em;
-  background-color: rgb(117, 85, 204);
+  background-color: rgb(255, 1, 1);
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  padding: 4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-complete{
+  font-size: 0.8em;
+  background-color: rgb(120, 94, 240);
   border: 1px solid white;
   border-radius: 5px;
   color: white;
