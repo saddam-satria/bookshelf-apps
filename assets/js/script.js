@@ -46,14 +46,15 @@ const addBukuToRak = () => {
 
   displayBooks(bookBelumDibaca, bookSudahDibaca);
   hapusRakBukuDibaca(bookBelumDibaca, bookSudahDibaca);
-  updateBuku(bookBelumDibaca, bookSudahDibaca);
-  searchBuku(books);
+  updateBuku(bookBelumDibaca);
+  // searchBuku(books);
 };
 
 const displayBooks = (belumDibaca, sudahDibaca) => {
   belumDibaca.map((item) => {
     const tabelRow = document.createElement('tr');
     const judul = document.createElement('td');
+    judul.classList.add('title');
     judul.innerText = item.title;
     const penulis = document.createElement('td');
     penulis.innerText = item.author;
@@ -74,6 +75,7 @@ const displayBooks = (belumDibaca, sudahDibaca) => {
   sudahDibaca.map((item) => {
     const tabelRow = document.createElement('tr');
     const judul = document.createElement('td');
+    judul.classList.add('title');
     judul.innerText = item.title;
     const penulis = document.createElement('td');
     penulis.innerText = item.author;
@@ -118,7 +120,7 @@ const hapusRakBukuDibaca = (belumdibaca, sudahdibaca) => {
   });
 };
 
-const updateBuku = (belumDibaca, sudahDibaca) => {
+const updateBuku = (belumDibaca) => {
   let keyBelumDibaca = [];
   let bukuBelumDibaca = [];
   belumDibaca.forEach((item) => {
@@ -137,23 +139,29 @@ const updateBuku = (belumDibaca, sudahDibaca) => {
   });
 };
 
-const searchBuku = (buku) => {
-  const searchBtn = document.querySelector('.search-btn');
-
-  searchBtn.addEventListener('click', function () {
-    const searchInput = document.querySelector('#search').value;
-    let hasil = buku.filter((item) => {
-      return item.title == searchInput;
-    });
-    if (hasil == '') {
-      alert('Hasil Tidak ditemukan');
-    } else {
-      hasil.map((item) => {
-       
-      });
+const searchBuku = () => {
+  const searchInput = document.querySelector('#search').value;
+  let filterToUpper = searchInput.toUpperCase();
+  const tr = document.querySelectorAll('tr');
+  
+  for (let i = 0 ; i < tr.length ; i++){
+    let td = tr[i].getElementsByTagName('td')[0];
+    if(td){
+      txt = td.textContent || td.innerText
+      if(txt.toUpperCase().indexOf(filterToUpper) > -1){
+        tr[i].style.display = '';
+      }else{
+        tr[i].style.display = 'none';
+      }
     }
-  });
+  }
+
+  
 };
+
+const searchBtn = document.querySelector('.search-btn');
+
+searchBtn.addEventListener('click', searchBuku);
 
 addBukuToRak();
 document.addEventListener('DOMContentLoaded', (e) => {
