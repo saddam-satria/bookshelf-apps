@@ -69,7 +69,7 @@ const displayBooks = (belumDibaca, sudahDibaca) => {
     tabelRow.appendChild(btnHapus);
 
     const RakBukuBelumDibaca = document.querySelector('.belum-dibaca');
-    btnHapus.innerHTML = ` <a class="btn-hapus">Hapus</a> | <a class="btn-complete">Selesai</a> `;
+    btnHapus.innerHTML = ` <a class="btn-hapus">Hapus</a> || <a class="btn-complete">Selesai</a> `;
     RakBukuBelumDibaca.appendChild(tabelRow);
   });
   sudahDibaca.map((item) => {

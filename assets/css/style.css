@@ -132,11 +132,11 @@
 }
 
 /* List buku belum dibaca */
-.rak-buku{
+.rak-buku {
   display: flex;
   justify-content: center;
 }
-.rak-buku .container{
+.rak-buku .container {
   background-color: rgba(50, 51, 50, 0.89);
   margin-top: 1rem;
   justify-content: flex-start;
@@ -161,19 +161,16 @@
   width: 80%;
 }
 
-
-
 .list-buku .container table {
   width: 100%;
   margin-top: 1rem;
-  
 }
 .list-buku .container table,
 th,
 td {
   border: 1px solid black;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -181,32 +178,31 @@ td {
   font-size: 0.8em;
 }
 
-.btn-hapus{
+.btn-hapus {
   font-size: 0.8em;
   background-color: rgb(255, 1, 1);
   border: 1px solid white;
   border-radius: 5px;
   color: white;
   width: 100%;
-  padding: 4px;
+  padding: 2px;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
 }
-.btn-complete{
+.btn-complete {
   font-size: 0.8em;
   background-color: rgb(120, 94, 240);
   border: 1px solid white;
   border-radius: 5px;
   color: white;
   width: 100%;
-  padding: 4px;
+  padding: 2px;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  margin-left: 10px;
+  
 }
-
 
 /* Desktop */
 @media only screen and (min-width: 1080px) {
@@ -239,5 +235,12 @@ td {
   }
   .list-buku .container table td {
     font-size: 1em;
+  }
+  .btn-complete {
+    width: 100%;
+    padding: 4px;
+  }
+  .btn-hapus {
+    padding: 4px;
   }
 }
