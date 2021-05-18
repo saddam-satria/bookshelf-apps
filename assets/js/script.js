@@ -82,7 +82,7 @@ const displayBooks = (belumDibaca, sudahDibaca) => {
     const tanggal = document.createElement('td');
     tanggal.innerText = item.year;
     const btnHapus = document.createElement('td');
-    btnHapus.innerHTML = ` <a class="btn-hapus">Hapus</a> || <a class="btn-complete">Selesai</a>`;
+    btnHapus.innerHTML = ` <a class="btn-hapus">Hapus</a> || <a class="btn-complete">Baca Kembali</a>`;
 
     tabelRow.appendChild(judul);
     tabelRow.appendChild(penulis);
