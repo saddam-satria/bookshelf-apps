@@ -46,7 +46,7 @@ const addBukuToRak = () => {
 
   displayBooks(bookBelumDibaca, bookSudahDibaca);
   hapusRakBukuDibaca(bookBelumDibaca, bookSudahDibaca);
-  updateBuku(bookBelumDibaca);
+  updateBuku(bookBelumDibaca, bookSudahDibaca);
   // searchBuku(books);
 };
 
@@ -82,7 +82,7 @@ const displayBooks = (belumDibaca, sudahDibaca) => {
     const tanggal = document.createElement('td');
     tanggal.innerText = item.year;
     const btnHapus = document.createElement('td');
-    btnHapus.innerHTML = ` <a class="btn-hapus">Hapus</a> `;
+    btnHapus.innerHTML = ` <a class="btn-hapus">Hapus</a> || <a class="btn-complete">Selesai</a>`;
 
     tabelRow.appendChild(judul);
     tabelRow.appendChild(penulis);
@@ -120,7 +120,7 @@ const hapusRakBukuDibaca = (belumdibaca, sudahdibaca) => {
   });
 };
 
-const updateBuku = (belumDibaca) => {
+const updateBuku = (belumDibaca, sudahDibaca) => {
   let keyBelumDibaca = [];
   let bukuBelumDibaca = [];
   belumDibaca.forEach((item) => {
@@ -128,12 +128,28 @@ const updateBuku = (belumDibaca) => {
     bukuBelumDibaca.push(item);
   });
 
-  const update = document.querySelectorAll('table tr td .btn-complete');
-  update.forEach((item, index) => {
+  let keySudahDibaca = [];
+  let bukuSudahDibaca = [];
+  sudahDibaca.forEach((item) => {
+    keySudahDibaca.push(item.id);
+    bukuSudahDibaca.push(item);
+  });
+
+  const updateBelumDibaca = document.querySelectorAll('.belum-dibaca tr td .btn-complete');
+  updateBelumDibaca.forEach((item, index) => {
     item.addEventListener('click', function (e) {
       e.preventDefault();
       bukuBelumDibaca[index].isComplete = true;
       localStorage.setItem(keyBelumDibaca[index], JSON.stringify(bukuBelumDibaca[index]));
+      location.href = '';
+    });
+  });
+  const updateSudahDibaca = document.querySelectorAll('.sudah-dibaca tr td .btn-complete');
+  updateSudahDibaca.forEach((item, index) => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      bukuSudahDibaca[index].isComplete = false;
+      localStorage.setItem(keySudahDibaca[index], JSON.stringify(bukuSudahDibaca[index]));
       location.href = '';
     });
   });
@@ -143,20 +159,18 @@ const searchBuku = () => {
   const searchInput = document.querySelector('#search').value;
   let filterToUpper = searchInput.toUpperCase();
   const tr = document.querySelectorAll('tr');
-  
-  for (let i = 0 ; i < tr.length ; i++){
+
+  for (let i = 0; i < tr.length; i++) {
     let td = tr[i].getElementsByTagName('td')[0];
-    if(td){
-      txt = td.textContent || td.innerText
-      if(txt.toUpperCase().indexOf(filterToUpper) > -1){
+    if (td) {
+      txt = td.textContent || td.innerText;
+      if (txt.toUpperCase().indexOf(filterToUpper) > -1) {
         tr[i].style.display = '';
-      }else{
+      } else {
         tr[i].style.display = 'none';
       }
     }
   }
-
-  
 };
 
 const searchBtn = document.querySelector('.search-btn');
